@@ -1,0 +1,25 @@
+{
+  "name": "bets01",
+  "version": "1.0.0",
+  "description": "",
+  "main": "scrapeEvent.ts",
+  "scripts": {
+    "dev": "ts-node scrapeEvent.ts",
+    "test": "jest --verbose ./"
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "@types/jest": "^29.4.0",
+    "prettier": "^2.8.3",
+    "ts-jest": "^29.0.5",
+    "ts-node": "^10.9.1",
+    "typescript": "^5.1.6"
+  },
+  "engines": {
+    "node": "16.14.0"
+  },
+  "dependencies": {
+    "puppeteer": "^20.9.0"
+  }
+}
