@@ -10,7 +10,6 @@ interface HorseInformation {
   odds: string | null
 }
 
-const url = 'https://m.skybet.com/horse-racing/fort-erie/event/31913413'
 const localFileUrl = `file://${__dirname}/../__fixture__/page.html`
 const urlRegex = new RegExp('^https:\\/\\/m\\.skybet\\.com\\/horse-racing\\/.*\\/event\\/\\d+$')
 
@@ -26,10 +25,6 @@ const validatePageTitle = async (title: string, browser: Browser) => {
 }
 
 const validateUrl = (url: string) => {
-  // For testing purposes
-  if (url === 'localFile') {
-    return
-  }
   if (!url) {
     throw new Error('Url is required')
   }
@@ -43,7 +38,7 @@ const scrapeEvent = async (url: string) => {
 
   const browser = await puppeteer.launch({ headless: true })
   const page = await browser.newPage()
-  await page.goto(url === 'localFile' ? localFileUrl : url)
+  await page.goto(url)
 
   const title = await page.title()
   await validatePageTitle(title, browser)
