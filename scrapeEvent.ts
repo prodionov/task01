@@ -10,7 +10,6 @@ interface HorseInformation {
   odds: string | null
 }
 
-const localFileUrl = `file://${__dirname}/../__fixture__/page.html`
 const urlRegex = new RegExp('^https:\\/\\/m\\.skybet\\.com\\/horse-racing\\/.*\\/event\\/\\d+$')
 
 const validatePageTitle = async (title: string, browser: Browser) => {
