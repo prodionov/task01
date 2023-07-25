@@ -32,12 +32,12 @@ const validateUrl = (url: string) => {
   }
 }
 
-const scrapeEvent = async (url: string) => {
-  await validateUrl(url)
+const scrapeEvent = async (eventUrl: string) => {
+  await validateUrl(eventUrl)
 
   const browser = await puppeteer.launch({ headless: true })
   const page = await browser.newPage()
-  await page.goto(url)
+  await page.goto(eventUrl)
 
   const title = await page.title()
   await validatePageTitle(title, browser)
@@ -83,3 +83,5 @@ const scrapeEvent = async (url: string) => {
   // We can filter them out as there would be a requirement for that.
   return horsesInformation
 }
+
+export default scrapeEvent
